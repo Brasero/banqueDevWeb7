@@ -9,3 +9,15 @@
     <input type="text" id="account-balance" name="account-balance"><br>
     <button type="submit">Ajouter client</button>
 </form>
+
+<?php
+
+require '../core/FormBuilder.php';
+$builder = new FormBuilder('POST', '');
+
+echo $builder->input("text", 'first-name', 'Prénom :')
+        ->input("text", 'age', "Age :")
+        ->submit('Enregister')
+        ->getForm();
+
+?>
